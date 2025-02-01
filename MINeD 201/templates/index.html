@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module Page</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #b0a8b9;
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center vertically */
+            min-height: 100vh;
+            padding: 20px; /* Add some padding to the body */
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            gap: 20px; /* Space between columns */
+            padding: 20px; /* Add padding to the container */
+        }
+
+        .column {
+            background-color: white;
+            padding: 20px;
+            padding-bottom: 50px; /* Increase space at the bottom */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1; /* Make columns share the available space */
+            display: flex;
+            flex-direction: column;
+            height: 650px; /* Set a fixed height for the columns */
+        }
+
+        .column h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .column p {
+            font-size: 1em;
+            color: #666;
+        }
+
+        .add_source {
+            padding: 10px;
+            background-color: #4b4453;
+            color: white;
+            border: solid;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .add_source:hover {
+            background-color: #333;
+        }
+
+        .cust {
+            padding: 10px;
+            background-color: #4b4453;
+            color: white;
+            border: solid;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .cust:hover {
+            background-color: #333;
+        }
+
+        .image-container {
+            display: flex; /* Use flexbox to align image and text */
+            align-items: center; /* Vertically center the items */
+            gap: 10px; /* Space between image and text */
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+
+        .image {
+            height: 40px;
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- First Column -->
+        <div class="column">
+            <h2><center>Source</center></h2>
+            <form action="http://127.0.0.1:5000/" method="post" enctype="multipart/form-data">
+                <button class="add_source" ><input type="file" name="pdf_file" accept=".pdf" required>Add Source</button>
+                
+            </div>
+
+        <!-- Second Column -->
+        <div class="column">
+            <h2><center>Untitled Module</center></h2>
+        </div>
+        
+        <!-- Third Column -->
+        <div class="column">
+            <h2><center>Podcast</center></h2>
+            <p><center>Audio Overview</center></p>
+            <div class="image-container">
+                <img class="image" src="podcast.png">
+                <p>Decode Research</p>
+            </div>
+            <button class="cust">Customize</button>
+            <button class="cust" type="submit">Generate</button>
+        </form>
+        </div>
+    </div>
