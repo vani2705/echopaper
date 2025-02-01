@@ -5,6 +5,7 @@ import pdfplumber
 import pyttsx3
 from dotenv import load_dotenv
 import google.generativeai as genai
+import jsonify
 
 # Load environment variables
 load_dotenv()
@@ -76,6 +77,15 @@ def text_to_speech_pyttsx3(conversation, audio_output_path):
     engine.save_to_file(conversation, audio_output_path)
     engine.runAndWait()  # Ensure the speech engine completes processing
     return os.path.exists(audio_output_path)
+
+@app.route('/module', methods=['POST'])
+def process_data():
+    data = request.json
+    response = {"message": "Received", "data": data}
+    return jsonify(response)
+
+if __name__ == '__main__':
+    app.run(port=5000)  # Flask runs on port 5000
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
