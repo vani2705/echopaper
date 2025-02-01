@@ -1,0 +1,70 @@
+<style>
+    /* Custom Navbar Styling */
+    .navbar {
+        background-color: #4b4453;
+        /* padding: 10px 15px; */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+        font-size: 20px;
+        font-weight: bold;
+        color: white !important;
+        transition: opacity 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-brand img {
+        max-height: 35px;
+        margin-right: 10px;
+    }
+
+    .navbar-brand span {
+        color: white;
+        font-size: 1em;
+    }
+
+    .navbar-brand:hover {
+        opacity: 0.8;
+    }
+
+    .nav-buttons {
+        display: flex;
+        gap: 8px;
+    }
+
+    .nav-buttons .btn {
+        border-radius: 15px;
+        border: 2px solid white;
+        color: white;
+        transition: 0.3s ease-in-out;
+        /* padding: 6px 15px; */
+        font-size: 0.9em;
+    }
+
+    .nav-buttons .btn-outline-primary {
+        background: transparent;
+    }
+
+    .nav-buttons .btn-outline-primary:hover {
+        background-color: white;
+        color: #23a6d5;
+    }
+</style>
+
+<nav class="navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="/images/logo.jpeg" alt="PaperCast Logo">
+        </a>
+        <div class="nav-buttons">            
+            <% if(currUser) { %>
+                <a class="btn btn-outline-primary" href="/logout"><b>Log out</b></a>
+                <% } else { %>
+                  <a class="btn btn-outline-primary" href="/signup"><b>Sign up</b></a>
+                  <a class="btn btn-outline-primary" href="/login"><b>Log in</b></a>
+                  <% } %>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaperCast - Intelligent Notebook</title>
+    <style>
+        :root {
+            --primary-bg: #b0a8b9;
+            --secondary-bg: #ffffff;
+            --accent: black;
+            --text-primary: #263238;
+            --text-secondary: #607D8B;
+            --transition: all 0.2s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background: var(--primary-bg);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1400px;
+            /* Increased max-width */
+            width: 100%;
+            gap: 2rem;
+        }
+
+        .sidebar {
+            width: 320px;
+            /* Increased width */
+            background: var(--secondary-bg);
+            padding: 2.5rem;
+            /* Increased padding */
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            height: 600px;
+            /* Increased height */
+        }
+
+        .branding {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--accent);
+            letter-spacing: -0.5px;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .create-btn {
+            width: 100%;
+            padding: 0.9rem;
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .create-btn:hover {
+            background: #1B5E20;
+        }
+
+        .main-content {
+            flex: 1;
+            background: var(--secondary-bg);
+            border-radius: 10px;
+            padding: 3.5rem;
+            /* Increased padding */
+            min-height: 600px;
+            /* Increased height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            color: var(--text-secondary);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .welcome-text {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 600;
+            position: relative;
+        }
+
+        .welcome-text::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            margin: 1.5rem auto;
+            border-radius: 2px;
+        }
+
+        .main-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 400px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="branding">My Module</div>
+            <form enctype="multipart/form-data" action="/module" method="GET">
+                <button class="create-btn">
+                    + Create New
+                </button>                
+            </form>
+        </aside>
+
+        <main class="main-content">
+            <div class="welcome-text">Welcome to PaperCast</div>
+            <p>Select a Module or create a new one to get started</p>
+        </main>
+    </div>
+
+    <script>
+        document.querySelector('.create-btn').addEventListener('click', () => {
+            const notebookName = prompt('Enter new module name:');
+            if (notebookName) {
+                const newNotebook = document.createElement('li');
+                newNotebook.className = 'notebook-item';
+                newNotebook.textContent = notebookName;
+
+                // Simple fade-in effect
+                newNotebook.style.opacity = '0';
+                requestAnimationFrame(() => {
+                    newNotebook.style.transition = 'opacity 0.2s ease';
+                    newNotebook.style.opacity = '1';
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

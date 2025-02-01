@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        .signup {
+            width: 100%;
+            padding: 10px;
+            background: #4b4453;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .signup:hover {
+            background-color: #333;
+        }
+
+        .signup-text {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #666;
+            margin-top: 40px;
+        }
+
+        .signup-text a {
+            color: #4b4453;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #b0a8b9;">
+    <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); width: 300px; text-align: center;">
+        <h2>Sign Up</h2>
+        <form action="signup" method="POST" novalidate>
+            <div style="margin-bottom: 15px; text-align: left;">
+                <label for="username" style="display: block; font-size: 14px; margin-bottom: 5px;">Email</label>
+                <input name="username" type="text" id="username" placeholder="Enter username" required style="width: 96%; padding: 8px 4px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            <div style="margin-bottom: 15px; text-align: left;">
+                <label for="email" style="display: block; font-size: 14px; margin-bottom: 5px;">Email</label>
+                <input name="email" type="email" id="email" placeholder="Enter Email" required style="width: 96%; padding: 8px 4px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            <div style="margin-bottom: 15px; text-align: left;">
+                <label for="password" style="display: block; font-size: 14px; margin-bottom: 5px;">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter Password" required style="width: 96%; padding: 8px 4px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px;">
+            </div>
+            <button class="signup" type="submit">Sign Up</button>
+        </form>
+        <!-- Add the "Or Sign Up" text here -->
+        <p class="signup-text">
+            Already have an account? <a href="loginpage.html">Login</a>
+        </p>
+    </div>
+</body>
+</html>

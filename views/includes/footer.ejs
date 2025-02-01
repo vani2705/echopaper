@@ -1,0 +1,56 @@
+<style>
+.footer {
+    background-color: #4b4453;
+    color: white;
+    padding: 0px;
+    position: relative; 
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 0rem;
+}
+
+.footer .social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.footer .social-icons a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    transform: translateY(-5px);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer .copyright {
+    margin-bottom: 0rem;
+    font-size: 12px;
+}
+</style>
+
+
+<footer class="footer">
+    <div class="container">
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="mailto:someone@example.com"><i class="fa-regular fa-envelope"></i></a>
+        </div>
+        
+        <!-- Copyright Text -->
+        <p class="copyright">&copy; 2025 PaperCast. All Rights Reserved.</p>
+    </div>
+</footer>

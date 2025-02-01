@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module Page</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #b0a8b9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            max-width: 1200px;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .column {
+            background-color: white;
+            padding: 20px;
+            padding-bottom: 50px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            height: 650px;
+        }
+
+        .column h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Unified button styling */
+        .cust {
+            padding: 10px;
+            background-color: #4b4453;
+            color: white;
+            border: solid;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .cust:hover {
+            background-color: #333;
+        }
+
+        .image-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            padding: 0 20px;
+        }
+
+        .image-container i {
+            font-size: 2rem;
+        }
+
+        .image-container p {
+            font-size: 1.2rem;            
+        }
+
+        .image {
+            height: 40px;
+            width: 40px;
+        }
+
+        /* Hide file input */
+        #fileInput {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- First Column -->
+        <div class="column">
+            <h2>Source</h2>
+            <form action="http://127.0.0.1:5000/" method="post" enctype="multipart/form-data">
+                <input type="file" id="fileInput" name="pdf_file" accept=".pdf" required>
+                <button type="button" class="cust" onclick="document.getElementById('fileInput').click()">Add
+                    Source</button>
+            </form>
+        </div>
+
+        <!-- Second Column -->
+        <div class="column">
+            <h2>Untitled Module</h2>
+        </div>
+
+        <!-- Third Column -->
+        <div class="column">
+            <h2>Podcast</h2>
+            <p style="text-align: center;">Audio Overview</p>
+            <div class="image-container">
+                <i class="fa-solid fa-podcast"></i>
+                <p>Decode Research</p>
+            </div>
+            <button class="cust">Customize</button>
+            <button class="cust" type="submit">Generate</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
